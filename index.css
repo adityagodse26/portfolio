@@ -1,3 +1,22 @@
+nav{
+    background-color: black;
+    align-items: center;
+    display: flex;
+}
+
+
+.left{
+    text-decoration: none;
+    color: white;
+}
+.right{
+    text-decoration: none;
+    justify-content: end;
+    display: flex;
+    color: white;
+
+}
+
 *{
-    background-color: white;
+    margin: 0;
 }
