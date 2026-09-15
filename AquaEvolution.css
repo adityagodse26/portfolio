@@ -1,0 +1,594 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   OCEAN
+========================= */
+
+#game {
+
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #43d5f2,
+            #0786b5,
+            #03486d
+        );
+}
+
+
+/* =========================
+   SUNLIGHT
+========================= */
+
+#game::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgba(255,255,255,0.4),
+            transparent 50%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   HUD
+========================= */
+
+.hud {
+
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    display: flex;
+
+    gap: 12px;
+
+    z-index: 100;
+}
+
+
+.hud div {
+
+    color: white;
+
+    background: rgba(0,0,0,0.35);
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(5px);
+
+    font-size: 16px;
+}
+
+
+.controls {
+
+    position: absolute;
+
+    right: 20px;
+    top: 20px;
+
+    color: white;
+
+    background: rgba(0,0,0,0.3);
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    z-index: 100;
+}
+
+
+/* =========================
+   PLAYER
+========================= */
+
+#player {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    font-size: 45px;
+
+    z-index: 50;
+
+    user-select: none;
+
+    transition:
+        left 0.08s linear,
+        top 0.08s linear;
+}
+
+
+/* =========================
+   FISH
+========================= */
+
+.fish {
+
+    position: absolute;
+
+    z-index: 20;
+
+    user-select: none;
+
+    white-space: nowrap;
+}
+
+
+/* Small fish */
+
+.small {
+    font-size: 25px;
+}
+
+
+/* Medium fish */
+
+.medium {
+    font-size: 42px;
+}
+
+
+/* Large fish */
+
+.large {
+    font-size: 65px;
+}
+
+
+/* =========================
+   FISH ANIMATIONS
+========================= */
+
+.fish1 {
+
+    top: 20%;
+
+    animation:
+        swimRight 12s linear infinite;
+}
+
+
+.fish2 {
+
+    top: 35%;
+
+    animation:
+        swimLeft 15s linear infinite;
+}
+
+
+.fish3 {
+
+    top: 55%;
+
+    animation:
+        swimRight 18s linear infinite;
+}
+
+
+.fish4 {
+
+    top: 70%;
+
+    animation:
+        swimLeft 13s linear infinite;
+}
+
+
+.fish5 {
+
+    top: 28%;
+
+    animation:
+        swimLeft 20s linear infinite;
+}
+
+
+.fish6 {
+
+    top: 48%;
+
+    animation:
+        swimRight 17s linear infinite;
+}
+
+
+.fish7 {
+
+    top: 65%;
+
+    animation:
+        swimLeft 22s linear infinite;
+}
+
+
+.fish8 {
+
+    top: 40%;
+
+    animation:
+        swimRight 25s linear infinite;
+}
+
+
+.fish9 {
+
+    top: 75%;
+
+    animation:
+        swimLeft 28s linear infinite;
+}
+
+
+/* =========================
+   SWIMMING RIGHT
+========================= */
+
+@keyframes swimRight {
+
+    from {
+        left: -100px;
+        transform: scaleX(1);
+    }
+
+    to {
+        left: 110%;
+        transform: scaleX(1);
+    }
+}
+
+
+/* =========================
+   SWIMMING LEFT
+========================= */
+
+@keyframes swimLeft {
+
+    from {
+        left: 110%;
+        transform: scaleX(-1);
+    }
+
+    to {
+        left: -100px;
+        transform: scaleX(-1);
+    }
+}
+
+
+/* =========================
+   BUBBLES
+========================= */
+
+.bubble {
+
+    position: absolute;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 20px;
+
+    z-index: 5;
+
+    animation: bubbleUp 7s linear infinite;
+}
+
+
+.bubble1 {
+    left: 10%;
+    bottom: -20px;
+}
+
+
+.bubble2 {
+    left: 25%;
+    bottom: -50px;
+    animation-delay: 2s;
+}
+
+
+.bubble3 {
+    left: 45%;
+    bottom: -30px;
+    animation-delay: 1s;
+}
+
+
+.bubble4 {
+    left: 60%;
+    bottom: -60px;
+    animation-delay: 3s;
+}
+
+
+.bubble5 {
+    left: 75%;
+    bottom: -20px;
+    animation-delay: 4s;
+}
+
+
+.bubble6 {
+    left: 90%;
+    bottom: -40px;
+    animation-delay: 1.5s;
+}
+
+
+@keyframes bubbleUp {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   SEAWEED
+========================= */
+
+.seaweed {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    font-size: 75px;
+
+    z-index: 10;
+
+    animation: sway 3s ease-in-out infinite;
+}
+
+
+.seaweed1 {
+    left: 8%;
+}
+
+
+.seaweed2 {
+    left: 45%;
+    animation-delay: 1s;
+}
+
+
+.seaweed3 {
+    right: 10%;
+    animation-delay: 0.5s;
+}
+
+
+@keyframes sway {
+
+    0% {
+        transform: rotate(-6deg);
+    }
+
+    50% {
+        transform: rotate(6deg);
+    }
+
+    100% {
+        transform: rotate(-6deg);
+    }
+}
+
+
+/* =========================
+   CORAL
+========================= */
+
+.coral {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    font-size: 75px;
+
+    z-index: 10;
+}
+
+
+.coral1 {
+    left: 25%;
+}
+
+
+.coral2 {
+    left: 65%;
+}
+
+
+.coral3 {
+    right: 25%;
+}
+
+
+/* =========================
+   ROCKS
+========================= */
+
+.rock {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    font-size: 55px;
+
+    z-index: 10;
+}
+
+
+.rock1 {
+    left: 55%;
+}
+
+
+.rock2 {
+    right: 5%;
+}
+
+
+/* =========================
+   SHELLS
+========================= */
+
+.shell {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    font-size: 40px;
+
+    z-index: 10;
+}
+
+
+.shell1 {
+    left: 40%;
+}
+
+
+.shell2 {
+    right: 35%;
+}
+
+
+/* =========================
+   SAND
+========================= */
+
+#game::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 45px;
+
+    background: #d6c27a;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   GAME OVER
+========================= */
+
+#gameOver {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 350px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    color: white;
+
+    background: rgba(0,0,0,0.8);
+
+    border-radius: 20px;
+
+    z-index: 500;
+}
+
+
+#gameOver h1 {
+
+    margin-bottom: 15px;
+}
+
+
+#gameOver p {
+
+    margin: 10px 0;
+
+    font-size: 18px;
+}
+
+
+#gameOver button {
+
+    margin-top: 15px;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+.hidden {
+    display: none;
+}

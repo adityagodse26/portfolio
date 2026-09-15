@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aqua Evolution</title>
+
+    <link rel="stylesheet" href="AquaEvolution.css">
+</head>
+
+<body>
+
+    <div id="game">
+
+        <!-- =========================
+             GAME INFORMATION
+        ========================== -->
+
+        <div class="hud">
+
+            <div>
+                🐟 Size:
+                <span id="size">35</span>
+            </div>
+
+            <div>
+                ⭐ Score:
+                <span id="score">0</span>
+            </div>
+
+            <div>
+                🍽️ Fish:
+                <span id="food">0</span>
+            </div>
+
+        </div>
+
+
+        <div class="controls">
+            WASD / Arrow Keys
+        </div>
+
+
+        <!-- =========================
+             WATER BUBBLES
+        ========================== -->
+
+        <div class="bubble bubble1">●</div>
+        <div class="bubble bubble2">●</div>
+        <div class="bubble bubble3">●</div>
+        <div class="bubble bubble4">●</div>
+        <div class="bubble bubble5">●</div>
+        <div class="bubble bubble6">●</div>
+
+
+        <!-- =========================
+             SMALL FISH
+        ========================== -->
+
+        <div class="fish small fish1">
+            🐟
+        </div>
+
+        <div class="fish small fish2">
+            🐠
+        </div>
+
+        <div class="fish small fish3">
+            🐟
+        </div>
+
+        <div class="fish small fish4">
+            🐠
+        </div>
+
+
+        <!-- =========================
+             MEDIUM FISH
+        ========================== -->
+
+        <div class="fish medium fish5">
+            🐡
+        </div>
+
+        <div class="fish medium fish6">
+            🐠
+        </div>
+
+        <div class="fish medium fish7">
+            🐟
+        </div>
+
+
+        <!-- =========================
+             LARGE FISH
+        ========================== -->
+
+        <div class="fish large fish8">
+            🐡
+        </div>
+
+        <div class="fish large fish9">
+            🐠
+        </div>
+
+
+        <!-- =========================
+             PLAYER
+        ========================== -->
+
+        <div id="player">
+            🐟
+        </div>
+
+
+        <!-- =========================
+             UNDERWATER OBJECTS
+        ========================== -->
+
+        <div class="seaweed seaweed1">
+            🌿
+        </div>
+
+        <div class="seaweed seaweed2">
+            🌿
+        </div>
+
+        <div class="seaweed seaweed3">
+            🌿
+        </div>
+
+
+        <div class="coral coral1">
+            🪸
+        </div>
+
+        <div class="coral coral2">
+            🪸
+        </div>
+
+        <div class="coral coral3">
+            🪸
+        </div>
+
+
+        <div class="rock rock1">
+            🪨
+        </div>
+
+        <div class="rock rock2">
+            🪨
+        </div>
+
+
+        <div class="shell shell1">
+            🐚
+        </div>
+
+        <div class="shell shell2">
+            🐚
+        </div>
+
+
+        <!-- =========================
+             GAME OVER
+        ========================== -->
+
+        <div id="gameOver" class="hidden">
+
+            <h1>Game Over 🐟</h1>
+
+            <p>
+                A bigger fish got you!
+            </p>
+
+            <p>
+                Final Score:
+                <span id="finalScore">0</span>
+            </p>
+
+            <button onclick="restartGame()">
+                Play Again
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="AquaEvolution.js"></script>
+
+</body>
+
+</html>
